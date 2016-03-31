@@ -1,0 +1,31 @@
+\documentclass{C:/Users/Simon/Desktop/mamette/cuisine/recipe}
+\usepackage{nicefrac} %Pour les fractions
+\usepackage[utf8]{inputenc} % Pour avoir
+\usepackage[francais]{babel} % les accents français
+\usepackage{graphicx} % Pour inclure l'image à la fin
+\usepackage{lipsum}
+\usepackage{charter}
+\usepackage{pdfpages}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+
+\usepackage{titlesec, blindtext, color}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+
+\setcounter{secnumdepth}{0}
+
+
+\DeclareUnicodeCharacter{00A0}{ }
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\include{tex/dessert}
+\end{document}

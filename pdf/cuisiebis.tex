@@ -1,0 +1,123 @@
+\documentclass{C:/Users/Simon/Desktop/mamette/cuisine/recipe}
+\usepackage{nicefrac} %Pour les fractions
+\usepackage[utf8]{inputenc} % Pour avoir
+\usepackage[francais]{babel} % les accents français
+\usepackage{graphicx} % Pour inclure l'image à la fin
+\usepackage{lipsum}
+\usepackage{charter}
+\usepackage{pdfpages}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+
+\usepackage{titlesec, blindtext, color}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+
+\usepackage{tocloft}
+
+\setlength\cftaftertoctitleskip{0pt}
+
+\setcounter{secnumdepth}{0}
+
+
+\DeclareUnicodeCharacter{00A0}{ }
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\frontmatter
+\pagestyle{empty}
+\begin{titlepage}
+\includepdf{images/couverture2.pdf}
+\end{titlepage}
+
+\begin{titlepage}
+\parindent=0pt
+ \hspace*{\stretch{1}}  %
+ \hspace*{\stretch{1}} 
+\vspace*{\stretch{1}}
+
+\begin{center}\bfseries\Huge
+    Le petit carnet de recettes\\de Mamette
+\end{center}
+\hrulefill
+\vspace*{1cm}
+\begin{center}\bfseries\Large
+Noël 2015
+\end{center}
+    
+\begin{center}\bfseries\Large
+Alice \textsc{Picard}\\
+Hanna \textsc{Picard}\\
+Mila \textsc{Picard}\\
+Nissim \textsc{Picard}\\
+Simon \textsc{Picard}
+\end{center}
+    \vspace*{\stretch{2}}
+\begin{flushright}
+       
+\end{flushright}   
+\end{titlepage}
+\cleardoublepage
+
+\vspace*{\fill}
+\begin{center}
+Les prémices de cette retranscription sont nées au Japon lors ce que Alice et Simon étaient dans le monorail de Tokyo, survolant Odaiba. Ce projet est né de l'envie commune de pouvoir profiter des trésors culinaires figurant dans le carnet de leur grand-mère, même s'il est évident qu'ils ne pourront qu'approcher le savoir-faire de Mamette.\\
+Ces deux derniers ont rapidement contacté leurs cousins pour mener à bien ce plan, ceux-ci ayant accepté avec enthousiasme.\\
+
+
+C'est donc avec plaisir et dans une complicité familiale que nous vous proposons de découvrir ce qui se cache effectivement dans ce fameux carnet, en espérant que, comme nous, vous pourrez profiter de cette cuisine légendaire.
+\end{center}
+\vspace*{\fill}
+\cleardoublepage
+
+
+\tableofcontents
+\clearpage
+
+\mainmatter% corps du document
+\pagestyle{headings}
+
+\chapter{Entrées}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/chapter1.jpg}
+\end{figure}
+\include{tex/entree}
+
+\chapter{Plats}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{images/chapter2.jpg}
+\end{figure}
+\include{tex/plat}
+
+\chapter{Sauces}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/chapter3.jpg}
+\end{figure}
+\include{tex/sauce}
+
+
+\chapter{Désserts}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/chapter4.jpg}
+\end{figure}
+\include{tex/dessert}
+
+\backmatter
+\pagestyle{empty}
+
+
+\ifodd\thepage\hbox{}\newpage\else\fi%si page paire ou impaire
+\includepdf{images/4ecouv.pdf}
+
+
+\end{document}
